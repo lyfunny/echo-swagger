@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/labstack/echo"
-	echoswagger "github.com/swaggo/gin-swagger"
-	"github.com/swaggo/gin-swagger/swaggerFiles"
+	"github.com/labstack/echo/v4"
+	echoswagger "github.com/lyfunny/echo-swagger"
+	"github.com/lyfunny/echo-swagger/swaggerFiles"
 
-	_ "github.com/swaggo/gin-swagger/example/basic/docs"
+	_ "github.com/lyfunny/echo-swagger/example/basic/docs"
 )
 
 // @title Swagger Example API
