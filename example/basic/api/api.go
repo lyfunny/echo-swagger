@@ -2,7 +2,8 @@ package api
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
+
+	"github.com/labstack/echo"
 	"github.com/swaggo/swag/example/basic/web"
 )
 
@@ -16,9 +17,10 @@ import (
 // @Failure 400 {object} web.APIError "We need ID!!"
 // @Failure 404 {object} web.APIError "Can not find ID"
 // @Router /testapi/get-string-by-int/{some_id} [get]
-func GetStringByInt(c *gin.Context) {
+func GetStringByInt(c echo.Context) error {
 	err := web.APIError{}
 	fmt.Println(err)
+	return nil
 }
 
 // @Description get struct array by ID
@@ -31,8 +33,8 @@ func GetStringByInt(c *gin.Context) {
 // @Failure 400 {object} web.APIError "We need ID!!"
 // @Failure 404 {object} web.APIError "Can not find ID"
 // @Router /testapi/get-struct-array-by-string/{some_id} [get]
-func GetStructArrayByString(c *gin.Context) {
-
+func GetStructArrayByString(c echo.Context) {
+	return nil
 }
 
 type Pet3 struct {

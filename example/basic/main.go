@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/swaggo/gin-swagger"
+	"github.com/labstack/echo"
+	echoswagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 
 	_ "github.com/swaggo/gin-swagger/example/basic/docs"
@@ -23,10 +23,10 @@ import (
 // @host petstore.swagger.io
 // @BasePath /v2
 func main() {
-	r := gin.New()
+	r := echo.New()
 
-	url := ginSwagger.URL("http://localhost:8080/swagger/doc.json") //The url pointing to API definition
-	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
+	url := echoswagger.URL("http://localhost:8080/swagger/doc.json") //The url pointing to API definition
+	r.GET("/swagger/*any", echoswagger.WrapHandler(swaggerFiles.Handler, url))
 
-	r.Run()
+	r.Start(":8080")
 }
