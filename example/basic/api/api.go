@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/labstack/echo/v4"
-	"github.com/swaggo/swag/example/basic/web"
+	"github.com/lyfunny/echo-swagger/example/basic/web"
 )
 
 //
